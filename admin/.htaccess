@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Admin panel"
+AuthUserFile /var/www/dsqepjbb/data/www/lomovskoykirill.h1n.ru/admin/.htpasswd
+Require valid-user
