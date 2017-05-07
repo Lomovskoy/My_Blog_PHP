@@ -31,7 +31,7 @@
         }
         
         $article = article_get($link, $id);
-        include("../views/article_admin.php");  
+        include("../views/article_admin.php");
     }else if($action == 'delete'){
         $id = $_GET['id'];
         $article = articles_delete($link, $id);

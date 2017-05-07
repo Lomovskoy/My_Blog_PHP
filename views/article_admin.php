@@ -19,7 +19,7 @@
             </nav> 
             <!-- END Header (navbar) -->
             <div id="addart">
-                <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>" enctype="multipart/form-data">
+                <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>">
                     <label>
                         Название
                         <input type="text" name="title" value="<?=$article['title']?>" class="form-item" autofocus required>
@@ -33,13 +33,24 @@
                         Содержимое
                         <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
                     </label>
-                    <!--для сервера-->
-                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" /><!--максимально допустимый размер файла для загрузки в байтах-->
-                    Выбрать файл для загрузки: <input name="uploaded_file" type="file" value="<?=$article['photo']?>"/><!--файл для загрузки-->
-                    <br>
                     <input type="submit" value="Сохранить" class="btn">
                 </form>
-            </div>
+                <?php if($action == "add"){?>
+                    <form enctype="multipart/form-data" action="upload.php" method="post"> <!--для сервера-->
+                        <br>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="350000000" /><!--максимально допустимый размер файла для загрузки в байтах-->
+                        Выбрать файл для загрузки: <input name="uploaded_file" type="file" class="btn"/><!--файл для загрузки-->
+                        <br><br>
+                        <input type="submit" value="Отправить" class="btn"/><!--кнопка загрузки-->
+                    </form>
+                <?php }?>
+                </div>
+                <?php if($action == "edit"){?>
+                    <br><br>
+                    <form enctype="multipart/form-data" action="delete.php" method="post"> <!--для сервера-->
+                        <input type="submit" value="Удалить все файлы" class="btn"/><!--кнопка загрузки-->
+                     </form>
+                <?php }?>
             <footer>
                 <p>
                     My Blog Lomovskoy<br>Copyright &copy; 2016
