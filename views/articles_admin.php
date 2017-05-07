@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <hmtl>
     <head>
+        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
         <meta charset="utf-8">
         <title>My Blog Lomovskoy</title>
-        <link rel="stylesheet" href="../style.css">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     </head>
     <body>
         <div class="container">
@@ -13,6 +13,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
+                        <img src="../images/photo.png" width="50px" height="50px">
                         <a id="blog" class="navbar-brand" href="../index.php">My Blog Lomovskoy</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
@@ -43,7 +44,7 @@
             </table>
             <footer>
                 <p>
-                    My Blog Lomovskoy<br>Copyright &copy; 2016
+                    My Blog Lomovskoy<br>Copyright &copy; 2017
                 </p>
             </footer>
         </div>
