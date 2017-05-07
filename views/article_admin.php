@@ -5,7 +5,7 @@
         <title>My Blog Lomovskoy</title>
         <link rel="stylesheet" href="../style.css">
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../bootstrap.css">
     </head>
     <body>
         <div class="container">
@@ -19,7 +19,7 @@
             </nav> 
             <!-- END Header (navbar) -->
             <div id="addart">
-                <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>">
+                <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>" enctype="multipart/form-data">
                     <label>
                         Название
                         <input type="text" name="title" value="<?=$article['title']?>" class="form-item" autofocus required>
@@ -33,6 +33,10 @@
                         Содержимое
                         <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
                     </label>
+                    <!--для сервера-->
+                    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" /><!--максимально допустимый размер файла для загрузки в байтах-->
+                    Выбрать файл для загрузки: <input name="uploaded_file" type="file" value="<?=$article['photo']?>"/><!--файл для загрузки-->
+                    <br>
                     <input type="submit" value="Сохранить" class="btn">
                 </form>
             </div>

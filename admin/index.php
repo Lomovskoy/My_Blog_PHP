@@ -7,7 +7,8 @@
     $article['title']='';
     $article['date']='';
     $article['content']='';
-
+    $article['photo']='';
+    
     if(isset($_GET['action']))
         $action = $_GET['action'];
     else
