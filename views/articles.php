@@ -22,11 +22,13 @@
             </nav> 
             <!-- END Header (navbar) -->
             <?php foreach($articles as $article): ?>
+            <hr>
             <div class="article">
                 <h3><a href="article.php?id=<?=$article['id']?>"><?=$article['title']?></a></h3>
                 <em>Опубликованно: <?=$article['date']?></em>
                 <p><?=articles_intro($article['content'])?></p>
             </div>
+            <hr>
             <?php endforeach ?>
             <footer>
                 <p>

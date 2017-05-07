@@ -23,11 +23,13 @@
             </nav> 
             <!-- END Header -->
             <!-- Content -->
+            <hr>
             <div class="article">
                 <h3><?=$article['title']?></h3>
                 <em>Опубликованно: <?=$article['date']?></em>
                 <p><?=$article['content']?></p>
             </div>
+            <hr>
             <!-- END Content -->
             <!-- Footer -->
             <footer>

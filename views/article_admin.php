@@ -33,24 +33,31 @@
                         Содержимое
                         <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
                     </label>
+                    <label>
+                        Выберите картинку:
+                        <input type="hidden" name="MAX_FILE_SIZE" value="350000000" />
+                        <input name="image" type="file" class="btn"/>
+                    </label>
                     <input type="submit" value="Сохранить" class="btn">
                 </form>
+                <!--
                 <?php if($action == "add"){?>
-                    <form enctype="multipart/form-data" action="upload.php" method="post"> <!--для сервера-->
+                    <form enctype="multipart/form-data" action="upload.php" method="post"> 
                         <br>
-                        <input type="hidden" name="MAX_FILE_SIZE" value="350000000" /><!--максимально допустимый размер файла для загрузки в байтах-->
-                        Выбрать файл для загрузки: <input name="uploaded_file" type="file" class="btn"/><!--файл для загрузки-->
+                        <input type="hidden" name="MAX_FILE_SIZE" value="350000000" />
+                        Выбрать файл для загрузки: <input name="uploaded_file" type="file" class="btn"/>
                         <br><br>
-                        <input type="submit" value="Отправить" class="btn"/><!--кнопка загрузки-->
+                        <input type="submit" value="Отправить" class="btn"/>
                     </form>
                 <?php }?>
                 </div>
                 <?php if($action == "edit"){?>
                     <br><br>
-                    <form enctype="multipart/form-data" action="delete.php" method="post"> <!--для сервера-->
-                        <input type="submit" value="Удалить все файлы" class="btn"/><!--кнопка загрузки-->
+                    <form enctype="multipart/form-data" action="delete.php" method="post">
+                        <input type="submit" value="Удалить все файлы" class="btn"/>
                      </form>
                 <?php }?>
+                -->
             <footer>
                 <p>
                     My Blog Lomovskoy<br>Copyright &copy; 2016
