@@ -19,7 +19,7 @@
             </nav> 
             <!-- END Header (navbar) -->
             <div id="addart">
-                <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>">
+                <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>" enctype="multipart/form-data">
                     <label>
                         Название
                         <input type="text" name="title" value="<?=$article['title']?>" class="form-item" autofocus required>
@@ -41,7 +41,7 @@
                     <input type="submit" value="Сохранить" class="btn">
                 </form>
                 <!--
-                <?php if($action == "add"){?>
+                <?php //if($action == "add"){?>
                     <form enctype="multipart/form-data" action="upload.php" method="post"> 
                         <br>
                         <input type="hidden" name="MAX_FILE_SIZE" value="350000000" />
@@ -49,14 +49,14 @@
                         <br><br>
                         <input type="submit" value="Отправить" class="btn"/>
                     </form>
-                <?php }?>
+                <?php// }?>
                 </div>
-                <?php if($action == "edit"){?>
+                <?php// if($action == "edit"){?>
                     <br><br>
                     <form enctype="multipart/form-data" action="delete.php" method="post">
                         <input type="submit" value="Удалить все файлы" class="btn"/>
                      </form>
-                <?php }?>
+                <?php// }?>
                 -->
             <footer>
                 <p>

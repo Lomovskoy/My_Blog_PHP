@@ -13,6 +13,8 @@
         //*************************************
         //include("delete.php");
         //delete_image($row);
+        //*************************************
+        //include("upload.php");
         //--------------------------------------
         if(!$result)
             die(mysqli_error($link));
@@ -43,6 +45,11 @@
     }
 
     function articles_new($link, $title, $date, $content, $image){
+        //--------------------------------------
+        include("upload.php");
+        //--------------------------------------
+        $image = $_FILES['image']['name'];
+        
         // Подготовка
         $title = trim($title);
         $content = trim($content);
@@ -63,7 +70,6 @@
         
         echo $query;
         $result = mysqli_query($link, $query);
-        
         if (!$result)
             die(mysqli_error($link));
         
