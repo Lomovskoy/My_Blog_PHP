@@ -3,19 +3,6 @@
     // Формируем запрос
         $query = "SELECT * FROM articles ORDER BY id DESC";
         $result = mysqli_query($link, $query);
-        //-------------------------------------
-        //$id = 6;
-        //$query_dell = sprintf("SELECT image FROM articles WHERE id=%d", $id);
-        //$result_dell = mysqli_query($link, $query_dell);
-        //$n_dell = mysqli_num_rows($result_dell);
-        //$row = mysqli_fetch_assoc($result_dell);
-        //print_r($row['image']);
-        //*************************************
-        //include("delete.php");
-        //delete_image($row);
-        //*************************************
-        //include("upload.php");
-        //--------------------------------------
         if(!$result)
             die(mysqli_error($link));
         
@@ -46,7 +33,7 @@
 
     function articles_new($link, $title, $date, $content, $image){
         //--------------------------------------
-        include("upload.php");
+        include("upload.php");//Удаление самого файла
         //--------------------------------------
         $image = $_FILES['image']['name'];
         

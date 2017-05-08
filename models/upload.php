@@ -1,5 +1,4 @@
 <?php
-    //echo dirname(__FILE__).'/upload/'.$filename;
     // проверяем, что есть файл
     if((!empty($_FILES["image"])) && ($_FILES['image']['error'] == 0)) {
       // проверяем, что файл это изображение JPEG и его размер не больше 350кб

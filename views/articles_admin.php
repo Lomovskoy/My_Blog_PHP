@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>My Blog Lomovskoy</title>
-        <link rel="stylesheet" href="../style.css">
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="../bootstrap.css">
+        <link rel="stylesheet" href="../style.css">
     </head>
     <body>
         <div class="container">

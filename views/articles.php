@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>My Blog Lomovskoy</title>
-        <link rel="stylesheet" href="style.css">
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <div class="container">
@@ -20,13 +19,17 @@
                     </ul>
                 </div>
             </nav> 
-            <!-- END Header (navbar) -->
             <?php foreach($articles as $article): ?>
             <hr>
             <div class="article">
                 <h3><a href="article.php?id=<?=$article['id']?>"><?=$article['title']?></a></h3>
                 <em>Опубликованно: <?=$article['date']?></em>
-                <p><?=articles_intro($article['content'])?></p>
+                <table>
+                    <tr>
+                        <td style="padding-right: 5px;"><img class="img-rounded pull-left" src="models/upload/<?=$article['image'];?>" width="80" height="80" alt="Картинка"></td>
+                        <td><?=articles_intro($article['content'])?></td>
+                    </tr>
+                </table>
             </div>
             <hr>
             <?php endforeach ?>

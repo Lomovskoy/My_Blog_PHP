@@ -3,9 +3,8 @@
     <head>
         <meta charset="utf-8">
         <title>My Blog Lomovskoy</title>
-        <link rel="stylesheet" href="style.css">
-        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <!-- Page div -->
@@ -27,6 +26,7 @@
             <div class="article">
                 <h3><?=$article['title']?></h3>
                 <em>Опубликованно: <?=$article['date']?></em>
+                <img style="margin-right: 10px;" class="img-rounded pull-left" src="models/upload/<?=$article['image'];?>" width="180" height="180" alt="Картинка">
                 <p><?=$article['content']?></p>
             </div>
             <hr>
