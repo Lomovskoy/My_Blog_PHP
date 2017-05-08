@@ -26,7 +26,9 @@
             <div class="article">
                 <h3><?=$article['title']?></h3>
                 <em>Опубликованно: <?=$article['date']?></em>
+                <?php if ($article['image'] != ''){?>
                 <img style="margin-right: 10px;" class="img-rounded pull-left" src="models/upload/<?=$article['image'];?>" width="180" height="180" alt="Картинка">
+                <?php }?>
                 <p><?=$article['content']?></p>
             </div>
             <hr>

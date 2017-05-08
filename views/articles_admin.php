@@ -30,7 +30,10 @@
                 </tr>
                 <?php foreach($articles as $article): ?>
                     <tr>
-                        <td><img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="40" height="40" alt="Картинка"></td>
+                        <td>
+                            <?php if ($article['image'] != ''){?>
+                            <img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="40" height="40" alt="Картинка"></td>
+                            <?php }?>
                         <td><?=$article['date']?></td>
                         <td><?=articles_intro($article['title'], 80)?></td>
                         <td>

@@ -26,7 +26,9 @@
                 <em>Опубликованно: <?=$article['date']?></em>
                 <table>
                     <tr>
+                        <?php if ($article['image'] != ''){?>
                         <td style="padding-right: 5px;"><img class="img-rounded pull-left" src="models/upload/<?=$article['image'];?>" width="80" height="80" alt="Картинка"></td>
+                        <?php }?>
                         <td><?=articles_intro($article['content'])?></td>
                     </tr>
                 </table>
