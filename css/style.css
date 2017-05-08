@@ -41,3 +41,9 @@ input[type="submit"] {
 #addart label {
     width: 100%;
 }
+
+img{
+    margin: 5px;
+    float: left;
+    margin-right: 25px;   
+}

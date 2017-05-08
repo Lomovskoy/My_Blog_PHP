@@ -5,8 +5,9 @@
     </head>
     <body>
     </body>
-</hmtl>    
-<!--<html>
+</hmtl>
+<!--<!DOCTYPE html>
+<html>
     <head>
         <title>Ошибка 404</title>
     </head>

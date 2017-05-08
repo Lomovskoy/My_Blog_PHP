@@ -1,9 +1,9 @@
-ErrorDocument 401 /My_Blog_PHP/error/401.php
-ErrorDocument 403 /My_Blog_PHP/error/401.php
-ErrorDocument 404 /My_Blog_PHP/error/401.php
-ErrorDocument 500 /My_Blog_PHP/error/401.php
+ErrorDocument 401 /error/401.php/index.php
+ErrorDocument 403 /error/401.php/index.php
+ErrorDocument 404 /error/401.php/index.php
+ErrorDocument 500 /error/401.php/index.php
 
 AuthType Basic
 AuthName "Admin panel"
-AuthUserFile D:/xampp/htdocs/My_Blog_PHP/admin/.htpasswd
+AuthUserFile /var/www/dsqepjbb/data/www/lomovskoykirill.h1n.ru/admin/.htpasswd
 Require valid-user
