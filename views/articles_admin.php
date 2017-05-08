@@ -22,6 +22,7 @@
             <!-- END Header (navbar) -->
             <table id="admin_table" class="table">
                 <tr>
+                    <th>Картинка</th>
                     <th>Дата</th>
                     <th>Заголовок</th>
                     <th></th>
@@ -29,6 +30,7 @@
                 </tr>
                 <?php foreach($articles as $article): ?>
                     <tr>
+                        <td><img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="40" height="40" alt="Картинка"></td>
                         <td><?=$article['date']?></td>
                         <td><?=articles_intro($article['title'], 80)?></td>
                         <td>
