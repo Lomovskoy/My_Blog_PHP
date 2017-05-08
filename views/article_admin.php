@@ -31,7 +31,7 @@
                         Содержимое
                         <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
                     </label>
-                    <?php if($action == 'edit'){?>
+                    <?php if($action == 'edit' && ($article['image'] != '')){?>
                         <label>
                             Изображение:
                             <table>
@@ -45,8 +45,9 @@
                         </label>
                     <?php }?>
                     <label>
-                        <?php if($action == 'add'){?>Выбрать изоражение:<?php }?>
-                        <?php if($action == 'edit'){?>Изменить изоражение:<?php }?>
+                        <?php if($action == 'add'){?>Добавить изображение:<?php }?>
+                        <?php if(($action == 'edit') && ($article['image'] != '')){?>Изменить или удалить изображение:<?php }?>
+                        <?php if(($action == 'edit') && ($article['image'] == '')){?>Добавить изображение:<?php }?>
                         <input type="hidden" name="MAX_FILE_SIZE" value="350000000" />
                         <input name="image" type="file" class="btn"/>
                     </label>
