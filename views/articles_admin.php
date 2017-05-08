@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <hmtl>
     <head>
-        <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="../photo/favicon.ico">
         <meta charset="utf-8">
         <title>My Blog Lomovskoy</title>
         <link rel="stylesheet" href="../css/style.css">
@@ -13,7 +13,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <img src="../images/photo.png" width="50px" height="50px">
+                        <img src="../photo/photo.png" width="50px" height="50px">
                         <a id="blog" class="navbar-brand" href="../index.php">My Blog Lomovskoy</a>
                     </div>
                     <ul class="nav navbar-nav navbar-right">
