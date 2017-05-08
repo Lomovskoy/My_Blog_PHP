@@ -3,9 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/My_Blog_PHP/models/articles.php</file>
-            <file>file:/D:/xampp/htdocs/My_Blog_PHP/models/delete.php</file>
-            <file>file:/D:/xampp/htdocs/My_Blog_PHP/index.php</file>
+            <file>file:/D:/xampp/htdocs/My_Blog_PHP/views/article_admin.php</file>
         </group>
     </open-files>
 </project-private>

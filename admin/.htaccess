@@ -1,3 +1,8 @@
+ErrorDocument 401 /My_Blog_PHP/error/401.php
+ErrorDocument 403 /My_Blog_PHP/error/401.php
+ErrorDocument 404 /My_Blog_PHP/error/401.php
+ErrorDocument 500 /My_Blog_PHP/error/401.php
+
 AuthType Basic
 AuthName "Admin panel"
 AuthUserFile D:/xampp/htdocs/My_Blog_PHP/admin/.htpasswd
