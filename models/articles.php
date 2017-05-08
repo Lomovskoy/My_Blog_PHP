@@ -4,15 +4,15 @@
         $query = "SELECT * FROM articles ORDER BY id DESC";
         $result = mysqli_query($link, $query);
         //-------------------------------------
-        $id = 24;
-        $query_dell = sprintf("SELECT image FROM articles WHERE id=%d", $id);
-        $result_dell = mysqli_query($link, $query_dell);
-        $n_dell = mysqli_num_rows($result_dell);
-        $row = mysqli_fetch_assoc($result_dell);
+        //$id = 6;
+        //$query_dell = sprintf("SELECT image FROM articles WHERE id=%d", $id);
+        //$result_dell = mysqli_query($link, $query_dell);
+        //$n_dell = mysqli_num_rows($result_dell);
+        //$row = mysqli_fetch_assoc($result_dell);
         //print_r($row['image']);
         //*************************************
-        include("delete.php");
-        delete_image($row);
+        //include("delete.php");
+        //delete_image($row);
         //--------------------------------------
         if(!$result)
             die(mysqli_error($link));
@@ -105,6 +105,7 @@
         // Проверка
         if ($id == 0)
             return false;
+        // удаление файла картинки
         //-------------------------
         $query_dell = sprintf("SELECT image FROM articles WHERE id=%d", $id);
         $result_dell = mysqli_query($link, $query_dell);
