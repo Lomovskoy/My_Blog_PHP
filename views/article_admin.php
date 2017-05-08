@@ -31,8 +31,22 @@
                         Содержимое
                         <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
                     </label>
+                    <?php if($action == 'edit'){?>
+                        <label>
+                            Изображение:
+                            <table>
+                                <tr>
+                                    <td style="padding-right: 5px;"><img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="80" height="80" alt="Картинка"></td>
+                                </tr>
+                                <tr>
+                                    <td><?=$article['image'];?></td>
+                                </tr>
+                            </table>
+                        </label>
+                    <?php }?>
                     <label>
-                        Выберите картинку:
+                        <?php if($action == 'add'){?>Выбрать изоражение:<?php }?>
+                        <?php if($action == 'edit'){?>Изменить изоражение:<?php }?>
                         <input type="hidden" name="MAX_FILE_SIZE" value="350000000" />
                         <input name="image" type="file" class="btn"/>
                     </label>
