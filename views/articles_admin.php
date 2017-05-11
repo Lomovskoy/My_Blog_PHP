@@ -4,12 +4,11 @@
         <link rel="shortcut icon" type="image/x-icon" href="../photo/favicon.ico">
         <meta charset="utf-8">
         <title>My Blog Lomovskoy</title>
-        <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
         <div class="container">
-            <!-- Header (navbar) -->
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -21,9 +20,9 @@
                     </ul>
                 </div>
             </nav> 
-            <!-- END Header (navbar) -->
             <table id="admin_table" class="table">
                 <tr>
+                    <th>Картинка</th>
                     <th>Дата</th>
                     <th>Заголовок</th>
                     <th></th>
@@ -31,6 +30,10 @@
                 </tr>
                 <?php foreach($articles as $article): ?>
                     <tr>
+                        <td>
+                            <?php if ($article['image'] != ''){?>
+                            <img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="40" height="40" alt="Картинка"></td>
+                            <?php }?>
                         <td><?=$article['date']?></td>
                         <td><?=articles_intro($article['title'], 80)?></td>
                         <td>
@@ -44,7 +47,7 @@
             </table>
             <footer>
                 <p>
-                    My Blog Lomovskoy<br>Copyright &copy; 2017
+                    My Blog Lomovskoy<br>Copyright &copy; 2016
                 </p>
             </footer>
         </div>
