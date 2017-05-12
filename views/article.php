@@ -54,6 +54,10 @@
                 <?php }?>
                 <p><?=$article['content']?></p>
             </div>
+            <!-- LikeBtn.com BEGIN -->
+            <span class="likebtn-wrapper" data-theme="custom" data-icon_l="hrt9" data-icon_l_c="#337ab7" data-icon_l_c_v="#c9c9c9" data-icon_d_c="#f8f8f8" data-icon_d_c_v="#dedede" data-label_c="#337ab7" data-label_c_v="#c9c9c9" data-counter_l_c="#337ab7" data-bg_c="rgba(252,252,252,0.87)" data-brdr_c="#e7e7e7" data-label_fs="r" data-identifier="like<?php echo $article['id'] ?>" data-dislike_enabled="false" data-lazy_load="true"></span>
+            <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+            <!-- LikeBtn.com END -->
             <hr>
             <footer>
                 <p>
