@@ -8,8 +8,15 @@
                 if ($file == $name){
                     unlink($file);}
                 
-            }
-        }
-    }
-
+            }}}
+    function delete_audio($name){
+        define('ROOT', dirname(__FILE__));
+        $name = ROOT . '/audio/' . $name['audio'];
+        if (file_exists(ROOT . '/audio')){
+            foreach (glob(ROOT . '/audio/*') as $file)
+            {
+                if ($file == $name){
+                    unlink($file);}
+                
+            }}}
 ?>

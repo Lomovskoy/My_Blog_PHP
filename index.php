@@ -7,4 +7,5 @@
     include("views/articles.php");
             
     //echo $_SERVER['DOCUMENT_ROOT'];
+    
 ?>

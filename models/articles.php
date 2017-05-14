@@ -30,30 +30,34 @@
         
         return $article;
     }
-
-    function articles_new($link, $title, $date, $content, $image){
+    function articles_new($link, $title, $date, $content, $image, $audio){
         //--------------------------------------
-        include("upload.php");//Загрузка самого файла
+        include("upload.php");//Загрузка самого файла картинки
+        add_image($image);
+        add_audio($audio);
         //--------------------------------------
         $image = $_FILES['image']['name'];
+        $audio = $_FILES['audio']['name'];
         
         // Подготовка
         $title = trim($title);
         $content = trim($content);
         $image = trim($image);
+        $audio = trim($audio);
         // Проверка
         if ($title == '')
             return false;
         
         // Запрос
-        $template_add = "INSERT INTO articles (title, date, content, image) "
-                . "VALUES ('%s', '%s', '%s', '%s')";
+        $template_add = "INSERT INTO articles (title, date, content, image, audio) "
+                . "VALUES ('%s', '%s', '%s', '%s', '%s')";
         //mysqli_real_escape_string экранирует строку запроса для защиты от SQL инекций
         $query = sprintf($template_add, 
                          mysqli_real_escape_string($link, $title),
                          mysqli_real_escape_string($link, $date),
                          mysqli_real_escape_string($link, $content),
-                         mysqli_real_escape_string($link, $image));
+                         mysqli_real_escape_string($link, $image),
+                         mysqli_real_escape_string($link, $audio));
         
         echo $query;
         $result = mysqli_query($link, $query);
@@ -63,7 +67,7 @@
         return true;
     }
 
-    function articles_edit($link, $id, $title, $date, $content, $image){
+    function articles_edit($link, $id, $title, $date, $content, $image, $audio){
         // Проверка
         if ($title == '')
             return false;
@@ -79,6 +83,16 @@
         delete_image($row);
         //-----------------------
         
+        // удаление файла музыки
+        //-------------------------
+        $query_dell = sprintf("SELECT audio FROM articles WHERE id=%d", $id);
+        $result_dell = mysqli_query($link, $query_dell);
+        $n_dell = mysqli_num_rows($result_dell);
+        $row = mysqli_fetch_assoc($result_dell);
+        
+        delete_audio($row);
+        //-----------------------
+        
         // Подготовка
         $title = trim($title);
         $content = trim($content);
@@ -86,22 +100,28 @@
         $id = (int)$id;
         $imagebd = $_FILES['image']['name'];
         $imagebd = trim($imagebd);
+        $audiobd = $_FILES['audio']['name'];
+        $audiobd = trim($audiobd);
         
         // Запрос
         $template_update = "UPDATE articles SET title='%s', content='%s', "
-                . "date='%s', image='%s' WHERE id='%d'";
+                . "date='%s', image='%s', audio='%s' WHERE id='%d'";
             
         $query = sprintf($template_update, 
                          mysqli_real_escape_string($link, $title),
                          mysqli_real_escape_string($link, $content),
                          mysqli_real_escape_string($link, $date),
                          mysqli_real_escape_string($link, $imagebd),
+                         mysqli_real_escape_string($link, $audiobd),
                          $id);
         
         $result = mysqli_query($link, $query);
         
+        
         //--------------------------------------
-        include("upload.php");//Загрузка самого файла
+        include("upload.php");//Загрузка самого файла картинки
+        add_image($image);
+        add_audio($audio);
         //--------------------------------------
         
         if (!result)
@@ -115,16 +135,29 @@
         // Проверка
         if ($id == 0)
             return false;
+            
         // удаление файла картинки
         //-------------------------
         $query_dell = sprintf("SELECT image FROM articles WHERE id=%d", $id);
         $result_dell = mysqli_query($link, $query_dell);
         $n_dell = mysqli_num_rows($result_dell);
         $row = mysqli_fetch_assoc($result_dell);
-        
+
         include("delete.php");
         delete_image($row);
         //-----------------------
+        
+        // удаление файла музыки
+        //-------------------------
+        $query_dell_audio = sprintf("SELECT audio FROM articles WHERE id=%d", $id);
+        $result_dell_audio = mysqli_query($link, $query_dell_audio);
+        $n_dell_audio = mysqli_num_rows($result_dell_audio);
+        $row_audio = mysqli_fetch_assoc($result_dell_audio);
+        print_r($row_audio);
+
+        delete_audio($row_audio);
+        //-----------------------
+
         // Запрос
         $query = sprintf("DELETE FROM articles WHERE id='%d'", $id);
         

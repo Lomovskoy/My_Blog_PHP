@@ -37,7 +37,9 @@
                             Изображение:
                             <table>
                                 <tr>
-                                    <td style="padding-right: 5px;"><img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="80" height="80" alt="Картинка"></td>
+                                    <td style="padding-right: 5px;">
+                                        <img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="80" height="80" alt="Картинка">
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td><?=$article['image'];?></td>
@@ -51,6 +53,33 @@
                         <?php if(($action == 'edit') && ($article['image'] == '')){?>Добавить изображение:<?php }?>
                         <input type="hidden" name="MAX_FILE_SIZE" value="350000000" />
                         <input name="image" type="file" class="btn"/>
+                    </label>
+                    <!----------------------------------------------------------------------------->
+                    <hr>
+                    <?php if($action == 'edit' && ($article['audio'] != '')){?>
+                        <label>
+                            Трек:
+                            <table>
+                                <tr>
+                                <object id="audioplayer197" type="application/x-shockwave-flash" data="../player/uppod-audio2.swf" width="350" height="40">
+                                <param name="bgcolor" value="#ffffff" />
+                                <param name="allowScriptAccess" value="always" />
+                                <param name="movie" value="../player/uppod-audio2.swf" />
+                                <param name="flashvars" value="comment=Start_Musuk&amp;st=../css/audio252-107.txt&amp;file=../models/audio/<?=$article['audio'];?>" />
+                                </object>
+                                </tr>
+                                <tr>
+                                    <td><?=$article['audio'];?></td>
+                                </tr>
+                            </table>
+                        </label>
+                    <?php }?>
+                    <label>
+                        <?php if($action == 'add'){?>Добавить трек:<?php }?>
+                        <?php if(($action == 'edit') && ($article['audio'] != '')){?>Изменить или удалить трек:<?php }?>
+                        <?php if(($action == 'edit') && ($article['audio'] == '')){?>Добавить трек:<?php }?>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="67108864" />
+                        <input name="audio" type="file" class="btn"/>
                     </label>
                     <input type="submit" value="Сохранить" class="btn">
                 </form>

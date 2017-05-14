@@ -23,6 +23,7 @@
             <table id="admin_table" class="table">
                 <tr>
                     <th>Картинка</th>
+                    <th>Трек</th>
                     <th>Дата</th>
                     <th>Заголовок</th>
                     <th></th>
@@ -34,6 +35,7 @@
                             <?php if ($article['image'] != ''){?>
                             <img class="img-rounded pull-left" src="../models/upload/<?=$article['image'];?>" width="40" height="40" alt="Картинка"></td>
                             <?php }?>
+                        <td><?php echo $article['audio'] ?></td>
                         <td><?=$article['date']?></td>
                         <td><?=articles_intro($article['title'], 80)?></td>
                         <td>
